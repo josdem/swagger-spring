@@ -9,6 +9,7 @@ In this project you get:
 * A Gradle build file
 * A standard project structure:
 
+```
     <proj>
       |
       +- src
@@ -21,4 +22,10 @@ In this project you get:
           |   |
           |   +- groovy
 
-          |
+```
+
+In order to create your project type:
+
+```
+lazybones create groovy-app swager-spring-mvc
+```
