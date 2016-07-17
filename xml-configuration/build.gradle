@@ -23,4 +23,5 @@ dependencies {
 jettyRun {
   reload = 'automatic'
   scanIntervalSeconds = 10
+  contextPath = ''
 }
