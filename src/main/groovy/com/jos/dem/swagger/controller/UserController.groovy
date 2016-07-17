@@ -21,7 +21,6 @@ class UserController {
 
   @RequestMapping("/{uuid}")
   User index(@PathVariable String uuid){
-    println "user"
     userService.getByUuid(uuid)
   }
 
