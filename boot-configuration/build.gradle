@@ -10,6 +10,10 @@ buildscript {
 	}
 }
 
+ext {
+  springfoxVersion = '2.5.0'
+}
+
 apply plugin: 'groovy'
 apply plugin: 'spring-boot'
 
@@ -25,9 +29,10 @@ repositories {
 	mavenCentral()
 }
 
-
 dependencies {
 	compile('org.springframework.boot:spring-boot-starter-web')
 	compile('org.codehaus.groovy:groovy')
+  compile "io.springfox:springfox-swagger2:${springfoxVersion}"
+  compile "io.springfox:springfox-swagger-ui:${springfoxVersion}"
 	testCompile('org.springframework.boot:spring-boot-starter-test')
 }
