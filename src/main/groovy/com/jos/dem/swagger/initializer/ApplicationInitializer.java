@@ -10,6 +10,7 @@ import org.springframework.web.servlet.DispatcherServlet;
 import com.jos.dem.swagger.config.AppConfig;
 
 public class ApplicationInitializer implements WebApplicationInitializer {
+
   public void onStartup(ServletContext servletContext) throws ServletException {
     AnnotationConfigWebApplicationContext ctx = new AnnotationConfigWebApplicationContext();
     ctx.register(AppConfig.class);
@@ -18,4 +19,5 @@ public class ApplicationInitializer implements WebApplicationInitializer {
     dynamic.addMapping("/");
     dynamic.setLoadOnStartup(1);
   }
+
 }
