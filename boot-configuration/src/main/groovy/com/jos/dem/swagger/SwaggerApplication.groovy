@@ -1,12 +1,12 @@
-package com.example
+package com.jos.dem.swagger
 
 import org.springframework.boot.SpringApplication
 import org.springframework.boot.autoconfigure.SpringBootApplication
 
 @SpringBootApplication
-class DemoApplication {
+class SwaggerApplication {
 
 	static void main(String[] args) {
-		SpringApplication.run DemoApplication, args
+		SpringApplication.run SwaggerApplication, args
 	}
 }
