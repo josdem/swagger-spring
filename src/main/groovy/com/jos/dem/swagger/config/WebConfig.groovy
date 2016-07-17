@@ -10,13 +10,4 @@ import org.springframework.web.servlet.view.InternalResourceViewResolver
 @EnableWebMvc
 @Configuration
 public class WebConfig extends WebMvcConfigurerAdapter {
-
-  @Bean
-  public InternalResourceViewResolver viewResolver() {
-    InternalResourceViewResolver resolver = new InternalResourceViewResolver()
-    resolver.setPrefix("/view/")
-    resolver.setSuffix(".jsp")
-    return resolver
-  }
-
 }
