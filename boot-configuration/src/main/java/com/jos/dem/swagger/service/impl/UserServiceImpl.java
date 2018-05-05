@@ -1,10 +1,19 @@
-package com.jos.dem.swagger.service;
+package com.jos.dem.swagger.service.impl;
 
+import java.util.Map;
+import java.util.HashMap;
+
+import com.jos.dem.swagger.model.User;
 import com.jos.dem.swagger.command.UserCommand;
+import com.jos.dem.swagger.service.UserService;
 
-public interface UserService {
+import org.springframework.stereotype.Service;
 
-  private Map<User> users = new HashMap<User>();
+
+@Service
+public class UserServiceImpl implements UserService {
+
+  private Map<String, User> users = new HashMap<String, User>();
 
   public User getByUuid(String uuid){
     return users.get(uuid) != null ? users.get(uuid) : new User();

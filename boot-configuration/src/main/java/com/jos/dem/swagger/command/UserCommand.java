@@ -4,7 +4,7 @@ import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
 @ApiModel(value="UserCommand", description="Generic command from users")
-class UserCommand {
+public class UserCommand {
   @ApiModelProperty(value = "User's uuid", allowableValues = "aphanumeric")
   private String uuid;
   @ApiModelProperty(value = "User's name", allowableValues = "text")

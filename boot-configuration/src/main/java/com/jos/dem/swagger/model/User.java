@@ -1,10 +1,15 @@
-package com.jos.dem.swagger.model
+package com.jos.dem.swagger.model;
+
+import lombok.Data;
+import lombok.ToString;
+import lombok.NoArgsConstructor;
+import lombok.AllArgsConstructor;
 
 @Data
 @ToString
 @NoArgsConstructor
 @AllArgsConstructor
-class User {
+public class User {
 
   private String uuid;
   private String name;
