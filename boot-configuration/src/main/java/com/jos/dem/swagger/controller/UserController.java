@@ -40,7 +40,7 @@ public class UserController {
     return userService.getAll();
   }
 
-  @ApiImplicitParam(name = "uuid", value = "User's uuid", required = true, dataType = "string", paramType = "query")
+  @ApiImplicitParam(name = "uuid", value = "User's uuid", required = true, dataType = "string", paramType = "path")
   @RequestMapping(method = GET, value = "{uuid}")
   public User getByUuid(@PathVariable String uuid){
     log.info("Getting user by uuid: " + uuid);
