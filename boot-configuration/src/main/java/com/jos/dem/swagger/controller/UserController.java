@@ -26,12 +26,15 @@ public class UserController {
   @Autowired
   private UserService userService;
 
-  @ApiImplicitParams({
+  @RequestMapping
+  public List<User> getAll(){
+    return userService.getAll();
+  }
+
   @ApiImplicitParam(name = "uuid", value = "User's uuid", required = true, dataType = "string", paramType = "query")
-  })
-  @RequestMapping(method = GET, value = "/")
-  public User getUserByUuid(UserCommand command){
-    return userService.getByUuid(command.getUuid());
+  @RequestMapping(method = GET, value="{uuid}")
+  public User getByUuid(@PathVariable String uuid){
+    return userService.getByUuid(uuid);
   }
 
   @RequestMapping(method = POST, consumes="application/json")

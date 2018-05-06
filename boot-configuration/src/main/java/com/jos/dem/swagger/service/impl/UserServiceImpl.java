@@ -15,6 +15,10 @@ public class UserServiceImpl implements UserService {
 
   private Map<String, User> users = new HashMap<String, User>();
 
+  public List<User> getAll(){
+    return users.values();
+  }
+
   public User getByUuid(String uuid){
     return users.get(uuid) != null ? users.get(uuid) : new User();
   }
