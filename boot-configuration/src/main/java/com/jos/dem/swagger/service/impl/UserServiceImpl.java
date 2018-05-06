@@ -1,7 +1,9 @@
 package com.jos.dem.swagger.service.impl;
 
 import java.util.Map;
+import java.util.List;
 import java.util.HashMap;
+import java.util.ArrayList;
 
 import com.jos.dem.swagger.model.User;
 import com.jos.dem.swagger.command.UserCommand;
@@ -16,7 +18,7 @@ public class UserServiceImpl implements UserService {
   private Map<String, User> users = new HashMap<String, User>();
 
   public List<User> getAll(){
-    return users.values();
+    return new ArrayList<User>(users.values());
   }
 
   public User getByUuid(String uuid){
