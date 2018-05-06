@@ -3,7 +3,7 @@ package com.jos.dem.swagger.command;
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;
 
-@ApiModel(value="UserCommand", description="Generic command from users")
+@ApiModel(value="UserModel", description="Model who represents an user entity")
 public class UserCommand {
   @ApiModelProperty(value = "User's uuid", allowableValues = "aphanumeric")
   private String uuid;
