@@ -1,19 +1,20 @@
 package com.jos.dem.swagger.model;
 
-import lombok.Data;
-import lombok.ToString;
-import lombok.NoArgsConstructor;
-import lombok.AllArgsConstructor;
-
-@Data
-@ToString
-@NoArgsConstructor
-@AllArgsConstructor
 public class User {
 
   private String uuid;
   private String name;
   private String email;
+
+  public User(){
+    super();
+  }
+
+  public User(String uuid, String name, String email){
+    this.uuid = uuid;
+    this.name = name;
+    this.email = email;
+  }
 
 }
 

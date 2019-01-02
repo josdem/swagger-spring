@@ -1,6 +1,7 @@
 buildscript {
 	ext {
     springBootVersion = '2.1.1.RELEASE'
+    springfoxVersion = '2.9.2'
 	}
 	repositories {
 		mavenCentral()
@@ -8,10 +9,6 @@ buildscript {
 	dependencies {
 		classpath("org.springframework.boot:spring-boot-gradle-plugin:${springBootVersion}")
 	}
-}
-
-ext {
-  springfoxVersion = '2.9.2'
 }
 
 apply plugin: 'java'
@@ -24,8 +21,7 @@ repositories {
 
 dependencies {
   implementation 'org.springframework.boot:spring-boot-starter-web'
-  implementation 'org.projectlombok:lombok'
   implementation "io.springfox:springfox-swagger2:${springfoxVersion}"
   implementation "io.springfox:springfox-swagger-ui:${springfoxVersion}"
-  testimplementation 'org.springframework.boot:spring-boot-starter-test'
+  testImplementation 'org.springframework.boot:spring-boot-starter-test'
 }
