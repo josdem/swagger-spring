@@ -1,53 +1,41 @@
 package com.jos.dem.swagger.controller;
 
-import static org.springframework.web.bind.annotation.RequestMethod.GET;
-import static org.springframework.web.bind.annotation.RequestMethod.POST;
+import com.jos.dem.swagger.command.UserCommand;
+import com.jos.dem.swagger.model.User;
+import com.jos.dem.swagger.service.UserService;
+import io.swagger.annotations.Api;
+import io.swagger.annotations.ApiImplicitParam;
+import lombok.RequiredArgsConstructor;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 
-import org.springframework.web.bind.annotation.RestController;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RequestMethod;
-import org.springframework.web.bind.annotation.RequestBody;
-import org.springframework.web.bind.annotation.PathVariable;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.http.HttpStatus;
-import org.springframework.http.ResponseEntity;
-import io.swagger.annotations.Api;
-import io.swagger.annotations.ApiImplicitParam;
-import io.swagger.annotations.ApiImplicitParams;
-
-import com.jos.dem.swagger.service.UserService;
-import com.jos.dem.swagger.command.UserCommand;
-import com.jos.dem.swagger.model.User;
-
-import org.slf4j.Logger;
-import org.slf4j.LoggerFactory;
-
-@Api(description="knows how receive manage user requests")
+@Api(value="knows how receive manage user requests")
 @RestController
 @RequestMapping("/users/*")
+@RequiredArgsConstructor
 public class UserController {
 
   private Logger log = LoggerFactory.getLogger(this.getClass());
 
-  @Autowired
-  private UserService userService;
+  private final UserService userService;
 
-  @RequestMapping(method = GET)
+  @GetMapping
   public List<User> getAll(){
     log.info("Getting all users");
     return userService.getAll();
   }
 
   @ApiImplicitParam(name = "uuid", value = "User's uuid", required = true, dataType = "string", paramType = "path")
-  @RequestMapping(method = GET, value = "{uuid}")
+  @GetMapping(value = "{uuid}")
   public User getByUuid(@PathVariable String uuid){
     log.info("Getting user by uuid: " + uuid);
     return userService.getByUuid(uuid);
   }
 
-  @RequestMapping(method = POST, consumes="application/json")
+  @PostMapping(consumes="application/json")
   public User create(@RequestBody UserCommand command){
     log.info("Saving user: w/uuid: " + command.getUuid());
     return userService.create(command);

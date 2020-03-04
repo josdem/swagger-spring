@@ -11,14 +11,13 @@ import com.jos.dem.swagger.service.UserService;
 
 import org.springframework.stereotype.Service;
 
-
 @Service
 public class UserServiceImpl implements UserService {
 
-  private Map<String, User> users = new HashMap<String, User>();
+  private final Map<String, User> users = new HashMap<>();
 
   public List<User> getAll(){
-    return new ArrayList<User>(users.values());
+    return new ArrayList<>(users.values());
   }
 
   public User getByUuid(String uuid){
