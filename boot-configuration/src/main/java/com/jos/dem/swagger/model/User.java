@@ -1,32 +1,19 @@
 package com.jos.dem.swagger.model;
 
+import lombok.AllArgsConstructor;
+import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.Setter;
+
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 public class User {
 
   private String uuid;
   private String name;
   private String email;
-
-  public User(){
-    super();
-  }
-
-  public User(String uuid, String name, String email){
-    this.uuid = uuid;
-    this.name = name;
-    this.email = email;
-  }
-
-  public String getName(){
-    return name;
-  }
-
-  public String getEmail(){
-    return email;
-  }
-
-  public String getUuid(){
-    return uuid;
-  }
 
 }
 
