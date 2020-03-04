@@ -80,7 +80,7 @@ public class UserController {
     return userService.getByUuid(uuid);
   }
 
-  @ApiOperation(value = "Get user by uuid")
+  @ApiOperation(value = "Create user")
   @ApiResponses(
       value = {
           @ApiResponse(code = 200, message = "User created"),
