@@ -1,6 +1,6 @@
 package com.jos.dem.swagger.service.impl;
 
-import com.jos.dem.swagger.command.UserCommand;
+import com.jos.dem.swagger.command.UserDto;
 import com.jos.dem.swagger.model.User;
 import com.jos.dem.swagger.service.UserService;
 import java.util.ArrayList;
@@ -26,9 +26,9 @@ public class UserServiceImpl implements UserService {
     return users.get(uuid) != null ? users.get(uuid) : new User();
   }
 
-  public User create(UserCommand command){
-    User user = new User(command.getUuid(), command.getName(), command.getEmail());
-    users.put(command.getUuid(), user);
+  public User create(UserDto userDto){
+    User user = new User(userDto.getUuid(), userDto.getName(), userDto.getEmail());
+    users.put(userDto.getUuid(), user);
     return user;
   }
 

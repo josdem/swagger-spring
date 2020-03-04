@@ -1,6 +1,6 @@
 package com.jos.dem.swagger.controller;
 
-import com.jos.dem.swagger.command.UserCommand;
+import com.jos.dem.swagger.command.UserDto;
 import com.jos.dem.swagger.model.User;
 import com.jos.dem.swagger.service.UserService;
 import io.swagger.annotations.Api;
@@ -88,9 +88,9 @@ public class UserController {
           @ApiResponse(code = 500, message = "Something went wrong")
       })
   @PostMapping(consumes = "application/json")
-  public User create(@Valid @RequestBody UserCommand command) {
-    log.info("Saving user: w/uuid: " + command.getUuid());
-    return userService.create(command);
+  public User create(@Valid @RequestBody UserDto userDto) {
+    log.info("Saving user: w/uuid: " + userDto.getUuid());
+    return userService.create(userDto);
   }
 
   @ResponseStatus(value = HttpStatus.BAD_REQUEST)

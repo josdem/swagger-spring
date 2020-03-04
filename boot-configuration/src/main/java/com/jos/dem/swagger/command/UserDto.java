@@ -11,7 +11,7 @@ import lombok.Setter;
 @Getter
 @Setter
 @ApiModel(value = "UserModel", description = "Model who represents an user entity")
-public class UserCommand {
+public class UserDto {
   @ApiModelProperty(value = "User's uuid", required = true)
   @Pattern(regexp = "^[0-9a-fA-F]{8}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{4}-[0-9a-fA-F]{12}$", message = "Invalid uuid format")
   private String uuid;
