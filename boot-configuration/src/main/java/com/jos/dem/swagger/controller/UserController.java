@@ -10,6 +10,7 @@ import io.swagger.annotations.ApiOperation;
 import io.swagger.annotations.ApiResponse;
 import io.swagger.annotations.ApiResponses;
 import java.util.List;
+import javax.validation.Valid;
 import lombok.RequiredArgsConstructor;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
@@ -59,7 +60,7 @@ public class UserController {
   }
 
   @PostMapping(consumes = "application/json")
-  public User create(@RequestBody UserCommand command) {
+  public User create(@Valid @RequestBody UserCommand command) {
     log.info("Saving user: w/uuid: " + command.getUuid());
     return userService.create(command);
   }
