@@ -7,6 +7,8 @@ import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
+import java.util.UUID;
+
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.stereotype.Service;
@@ -14,7 +16,7 @@ import org.springframework.stereotype.Service;
 @Service
 public class UserServiceImpl implements UserService {
 
-  private final Map<String, User> users = new HashMap<>();
+  private final Map<UUID, User> users = new HashMap<>();
 
   private Logger log = LoggerFactory.getLogger(this.getClass());
 
@@ -23,12 +25,14 @@ public class UserServiceImpl implements UserService {
   }
 
   public User getByUuid(String uuid){
-    return users.get(uuid) != null ? users.get(uuid) : new User();
+    User user = users.get(UUID.fromString(uuid));
+    return user != null ? user : new User();
   }
 
   public User create(UserDto userDto){
-    User user = new User(userDto.getUuid(), userDto.getName(), userDto.getEmail());
-    users.put(userDto.getUuid(), user);
+    UUID userId = UUID.fromString(userDto.getUuid());
+    User user = new User(userId, userDto.getName(), userDto.getEmail());
+    users.put(userId, user);
     return user;
   }
 
