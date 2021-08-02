@@ -9,7 +9,6 @@ def springfoxUiVersion = '2.9.2'
 
 group = 'com.jos.dem.swagger'
 version = '1.0.0-SNAPSHOT'
-sourceCompatibility = '15'
 
 configurations {
   compileOnly {
