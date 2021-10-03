@@ -11,4 +11,8 @@ import org.springframework.stereotype.Component;
 @ConfigurationProperties("api")
 public class ApplicationProperties {
     private String version;
+    private String title;
+    private String basePackage;
+    private String description;
+    private String terms;
 }

@@ -26,15 +26,15 @@ public class SwaggerConfig {
                 .protocols(Set.of("https", "http"))
                 .apiInfo(apiInfo())
                 .select()
-                .apis(RequestHandlerSelectors.basePackage("com.jos.dem.swagger"))
+                .apis(RequestHandlerSelectors.basePackage(applicationProperties.getBasePackage()))
                 .build();
     }
 
     private ApiInfo apiInfo() {
         return new ApiInfoBuilder()
-                .title("Spring Boot Swagger")
-                .description("Automated JSON API documentation for API's built with Spring")
-                .termsOfServiceUrl("https://josdem.io/")
+                .title(applicationProperties.getTitle())
+                .description(applicationProperties.getDescription())
+                .termsOfServiceUrl(applicationProperties.getTerms())
                 .version(applicationProperties.getVersion())
                 .build();
     }
