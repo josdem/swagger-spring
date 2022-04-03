@@ -7,7 +7,7 @@ plugins {
 def springfoxVersion = '3.0.0'
 def springfoxUiVersion = '2.9.2'
 
-group = 'com.jos.dem.swagger'
+group = 'com.josdem.swagger'
 version = '1.0.0-SNAPSHOT'
 
 configurations {
