@@ -1,9 +1,9 @@
-package com.jos.dem.swagger.service;
+package com.josdem.swagger.service;
 
 import java.util.List;
 
-import com.jos.dem.swagger.model.User;
-import com.jos.dem.swagger.command.UserDto;
+import com.josdem.swagger.model.User;
+import com.josdem.swagger.command.UserDto;
 
 public interface UserService {
 

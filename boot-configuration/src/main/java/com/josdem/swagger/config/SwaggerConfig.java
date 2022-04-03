@@ -1,4 +1,4 @@
-package com.jos.dem.swagger.config;
+package com.josdem.swagger.config;
 
 import lombok.RequiredArgsConstructor;
 import org.springframework.context.annotation.Bean;

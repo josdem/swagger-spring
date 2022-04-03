@@ -1,4 +1,4 @@
-package com.jos.dem.swagger.model;
+package com.josdem.swagger.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Getter;

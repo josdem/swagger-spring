@@ -1,6 +1,6 @@
 api:
   version: 1.0.0
   title: Spring Boot Swagger
-  basePackage: com.jos.dem.swagger
+  basePackage: com.josdem.swagger
   description: Automated JSON API documentation for API's built with Spring
   terms: https://josdem.io/

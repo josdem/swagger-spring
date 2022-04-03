@@ -1,8 +1,8 @@
-package com.jos.dem.swagger.controller;
+package com.josdem.swagger.controller;
 
-import com.jos.dem.swagger.command.UserDto;
-import com.jos.dem.swagger.model.User;
-import com.jos.dem.swagger.service.UserService;
+import com.josdem.swagger.command.UserDto;
+import com.josdem.swagger.model.User;
+import com.josdem.swagger.service.UserService;
 import io.swagger.annotations.Api;
 import io.swagger.annotations.ApiImplicitParam;
 import io.swagger.annotations.ApiImplicitParams;

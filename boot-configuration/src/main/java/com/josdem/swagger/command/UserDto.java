@@ -1,4 +1,4 @@
-package com.jos.dem.swagger.command;
+package com.josdem.swagger.command;
 
 import io.swagger.annotations.ApiModel;
 import io.swagger.annotations.ApiModelProperty;

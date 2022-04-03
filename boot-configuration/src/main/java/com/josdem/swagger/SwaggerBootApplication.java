@@ -1,4 +1,4 @@
-package com.jos.dem.swagger;
+package com.josdem.swagger;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

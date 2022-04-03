@@ -1,8 +1,8 @@
-package com.jos.dem.swagger.service.impl;
+package com.josdem.swagger.service.impl;
 
-import com.jos.dem.swagger.command.UserDto;
-import com.jos.dem.swagger.model.User;
-import com.jos.dem.swagger.service.UserService;
+import com.josdem.swagger.command.UserDto;
+import com.josdem.swagger.model.User;
+import com.josdem.swagger.service.UserService;
 import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.List;
