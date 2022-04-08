@@ -43,7 +43,9 @@ public class UserControllerTest {
                         .contentType(MediaType.APPLICATION_JSON)
                         .content(new ObjectMapper().writeValueAsString(user)))
                 .andExpect(status().isOk())
-                .andExpect(jsonPath("$.uuid", matchesRegex(UUID_REGEX)));
+                .andExpect(jsonPath("$.uuid", matchesRegex(UUID_REGEX)))
+                .andExpect(jsonPath("$.name").value("josdem"))
+                .andExpect(jsonPath("$.email").value("contact@josdem.io"));
     }
 
     @Test
