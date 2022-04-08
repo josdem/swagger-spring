@@ -14,14 +14,18 @@ import org.springframework.test.web.servlet.MockMvc;
 
 import java.util.UUID;
 
+import static org.hamcrest.Matchers.matchesRegex;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
+import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.jsonPath;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
 @Slf4j
 @SpringBootTest
 @AutoConfigureMockMvc
 public class UserControllerTest {
+
+    private static final String UUID_REGEX = "[0-9a-f]{8}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{4}-[0-9a-f]{12}";
 
     @Autowired
     private MockMvc mockMvc;
@@ -34,7 +38,12 @@ public class UserControllerTest {
         user.setUuid(UUID.randomUUID());
         user.setName("josdem");
         user.setEmail("contact@josdem.io");
-        mockMvc.perform(post("/users").contentType(MediaType.APPLICATION_JSON).content(new ObjectMapper().writeValueAsString(user))).andExpect(status().isOk());
+
+        mockMvc.perform(post("/users")
+                        .contentType(MediaType.APPLICATION_JSON)
+                        .content(new ObjectMapper().writeValueAsString(user)))
+                .andExpect(status().isOk())
+                .andExpect(jsonPath("$.uuid", matchesRegex(UUID_REGEX)));
     }
 
     @Test
