@@ -70,4 +70,12 @@ public class UserControllerTest {
                 .andExpect(jsonPath("$.*", hasSize(1)));
     }
 
+    @Test
+    @Order(4)
+    @DisplayName("should return a bad request when we send an invalid UUID")
+    void shouldReturnBadResultWhenInvalidUuid(TestInfo testInfo) throws Exception {
+        log.info("Running: {}", testInfo.getDisplayName());
+        mockMvc.perform(get("/users/" + "invalidUuid").contentType(MediaType.APPLICATION_JSON)).andExpect(status().isBadRequest());
+    }
+
 }
