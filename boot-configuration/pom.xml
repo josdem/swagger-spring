@@ -16,7 +16,7 @@
 	<properties>
 		<java.version>15</java.version>
 		<springfox-version>3.0.0</springfox-version>
-		<springfox-ui-version>2.9.2</springfox-ui-version>
+		<springfox-ui-version>2.10.0</springfox-ui-version>
 	</properties>
 	<dependencies>
 		<dependency>
